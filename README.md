@@ -11,10 +11,12 @@ Souhaitant partager mon projet et le versionner dans le cas de modifications fut
 - Développé en java Android
 - Utilise la technologie Beacons de la marque estimote (et donc leur SDK) => Basé sur le kit de développement de base contenant 3 beacons (Icy Marshmallow, Bluebrry Pie, Mint Cocktail)
 - Vous devez disposez des 3 Beacons de base du kit de développement pour que les notifications spécifiques s'affichent et vous devez vous assurer pour les Beacons suivant:
-	- Icy Marshmallow: Major = 0; Minor = 0; placez votre téléphone à au moins 2 mètres du beacon.
+	- Icy Marshmallow: Major = 5526; Minor = 19125; placez votre téléphone à plus de 2 mètres du beacon (longue distance)
+	- Mint Cocktail: Major = 1857; Minor = 60524; placez votre téléphone à environ 2 mètres du beacon (moyenne distance)
+	- Blueberry Pie: Major = 17828; Minor = 47111; placez votre téléphone au plus prêt du beacon (courte distance)
 - Nécessite l'activiation du bluetooth sur le récepteur (smartphone ou tablette)
 - Version d'Android recquise: 4.3+ (support du BLE [Bluetooth Low Energy] natif)
-- Testé sur Samsung Galaxy S4, avec Android 5.0.1 (Lollipop
+- Testé sur Samsung Galaxy S4, avec Android 5.0.1 (Lollipop)
 
 
 ## Installation de l'application sur le téléphone
