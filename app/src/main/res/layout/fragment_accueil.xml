@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wefika.flowlayout.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".fragment_accueil">
+
+    <ImageView
+        android:id="@+id/fond_accueil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:src="@drawable/accueil"
+        android:adjustViewBounds="true"
+        android:paddingBottom="16dp" />
+
+</com.wefika.flowlayout.FlowLayout>

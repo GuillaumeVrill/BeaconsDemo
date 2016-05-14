@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Beacons Demo</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="titreDecouverte">Découverte du jardin</string>
+    <string name="titreAppDescription">Fonctionnement de l\'application</string>
+    <string name="title_activity_beacon">Beacon Détecté</string>
+    <string name="link_twitter"><a href="https://twitter.com/GuillaumeVrill">Retrouve Guillaume sur Twitter!</a></string>
+    <string name="welcome">Vous êtes à l\'entrée!</string>
+    <string name="txtPageDecouverte">Bienvenue sur l\'application "Beacon Demo". \n\n
+                Elle démontre certaines possibilités des Beacons de la marque Estimote au travers d\'un "jardin" (à supposer que vous ayez placé les balises dans votre jardin!). \n\n
+                Bonne visite!</string>
+    <string name="txtPageDescription">Cette application utilise la technologie des Beacons, des emetteurs bluetooth, de la marque Estimote.\n\n
+                Elle est réalisée par Guillaume Vrilliaux, étudiant de master 1, et a pour objectif de présenter les possibilités offertes par cette technologie.</string>
+    <string name="frag_entree">Pour toute question, n\'hésitez pas à me solliciter!</string>
+    <string name="txt_pointage">Vous avez accepté de vous identifier sur notre réseau!</string>
+    <string name="txt_pointage2">Merci de votre considération!</string>
+
+    <!-- Menu items: -->
+    <string-array name="menu_items">
+        <item name="menu_accueil">Accueil</item>
+        <item name="menu_page_decouverte">Découverte</item>
+        <item name="menu_page_information">Informations</item>
+    </string-array>
+</resources>

@@ -1,0 +1,65 @@
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+def sonatypeRepositoryUrl
+sonatypeRepositoryUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+
+afterEvaluate { project ->
+    uploadArchives {
+
+        repositories {
+            mavenDeployer {
+                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+                pom.artifactId = POM_ARTIFACT_ID
+
+                repository(url: sonatypeRepositoryUrl) {
+                    authentication(
+                            userName: project.hasProperty("nexusUsername") ? nexusUsername : "",
+                            password: project.hasProperty("nexusPassword") ? nexusPassword : ""
+                    )
+                }
+
+                pom.project {
+                    name POM_NAME
+                    packaging POM_PACKAGING
+                    
+                }
+            }
+        }
+    }
+
+    signing {
+        required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
+        sign configurations.archives
+    }
+
+    task androidJavadocs(type: Javadoc) {
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+
+        if (JavaVersion.current().isJava8Compatible()) {
+            allprojects {
+                tasks.withType(Javadoc) {
+                    options.addStringOption('Xdoclint:none', '-quiet')
+                }
+            }
+        }
+    }
+
+    task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+        classifier = 'javadoc'
+        from androidJavadocs.destinationDir
+    }
+
+    task androidSourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.sourceFiles
+    }
+
+    artifacts {
+        //archives packageReleaseJar
+        archives androidSourcesJar
+        archives androidJavadocsJar
+    }
+}

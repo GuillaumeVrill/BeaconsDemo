@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="titleColor">#E52E4B</color>
+    <color name="textColor">#024377</color>
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="special">#A9A6C1</color>
+    <color name="colorB1">#FFFFFF</color>
+    <color name="colorB2">#FFFFFF</color>
+    <color name="colorB3">#FFFFFF</color>
+
+    <!-- menu: -->
+    <color name="menuBackground">#FFFFFF</color>
+    <color name="menuTextColor">#024377</color>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.guillaume.beaconsdemo" >
+
+    <!-- la permission sur les sms est désactivée pour le confort utilisateur, mais doit être réactivé si la confirmation du fragment
+        de pointage est activée également (voir le code java du fragment_pointage) -->
+    <!--<uses-permission android:name="android.permission.SEND_SMS"></uses-permission>-->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/iconeapp"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.guillaume.beaconsdemo.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.guillaume.beaconsdemo.Activity_Beacon"
+            android:label="@string/title_activity_beacon" >
+        </activity>
+    </application>
+
+</manifest>

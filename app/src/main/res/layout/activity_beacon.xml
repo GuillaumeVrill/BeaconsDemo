@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".Activity_Norbert"
+    android:orientation="vertical"
+    android:id="@+id/beaconView">
+
+    <TextView
+        android:id="@+id/txt_acti_beacons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/title1"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:gravity="center" />
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin" />
+
+</LinearLayout>
