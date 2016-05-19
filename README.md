@@ -22,7 +22,7 @@ Souhaitant partager mon projet et le versionner dans le cas de modifications fut
 ## Installation de l'application sur le téléphone
 Deux solutions, soit en passant par Android Studio (ou Eclipse, mais n'utilisant pas cet IDE je ne détaillerai pas sa procédure), soit en utilisant juste l'APK.
 
-1. Avec l'APK:
+1 Avec l'APK:
 
 - Téléchargez et décompressez le ZIP
 - Récupérez le dossier /app, copiez le fichier "app-release.apk"
@@ -30,7 +30,7 @@ Deux solutions, soit en passant par Android Studio (ou Eclipse, mais n'utilisant
 - Sur votre téléphone, dans votre explorateur de fichier, allez à l'emplacement de l'APK et cliquez dessus, faites "installer"
 - Il peut vous être demandé d'autoriser l'installation d'applications externes, accepter d'installer cette fois
 
-2. Via Android Studio:
+2 Via Android Studio:
 
 - Récupérez le ZIP et dézippez le dossier du projet
 - Ouvrez Android Studio et faites "New > Project > Import Project"
