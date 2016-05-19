@@ -23,6 +23,7 @@ Souhaitant partager mon projet et le versionner dans le cas de modifications fut
 Deux solutions, soit en passant par Android Studio (ou Eclipse, mais n'utilisant pas cet IDE je ne détaillerai pas sa procédure), soit en utilisant juste l'APK.
 
 1. Avec l'APK:
+
 - Téléchargez et décompressez le ZIP
 - Récupérez le dossier /app, copiez le fichier "app-release.apk"
 - Collez-le dans votre téléphone dans le répertoire de votre choix (à la racine de votre carte SD par exemple ou dans un dossier "ApplicationsPersos", etc.)
@@ -30,6 +31,7 @@ Deux solutions, soit en passant par Android Studio (ou Eclipse, mais n'utilisant
 - Il peut vous être demandé d'autoriser l'installation d'applications externes, accepter d'installer cette fois
 
 2. Via Android Studio:
+
 - Récupérez le ZIP et dézippez le dossier du projet
 - Ouvrez Android Studio et faites "New > Project > Import Project"
 - Sélectionnez le projet à l'emplacement du dossier précédemment dézippé
