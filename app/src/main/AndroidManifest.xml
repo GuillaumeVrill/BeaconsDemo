@@ -25,6 +25,10 @@
             android:name="com.guillaume.beaconsdemo.Activity_Beacon"
             android:label="@string/title_activity_beacon" >
         </activity>
+        <activity
+            android:name="com.guillaume.beaconsdemo.Activity_Review_Beacon"
+            android:label="@string/title_activity_beacon_review" >
+        </activity>
     </application>
 
 </manifest>

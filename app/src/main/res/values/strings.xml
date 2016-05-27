@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">Beacons Demo</string>
 
+    <!-- Titles: -->
     <string name="action_settings">Settings</string>
     <string name="titreDecouverte">Découverte du jardin</string>
     <string name="titreAppDescription">Fonctionnement de l\'application</string>
     <string name="title_activity_beacon">Beacon Détecté</string>
+    <string name="title_activity_beacon_review">Review Beacon</string>
+    <string name="title_beacon_IcyMarshmallow">Bienvenue au Jardin</string>
+    <string name="title_beacon_BlueberryPi">Votre passage est enregistré</string>
+    <string name="title_beacon_MintCocktail">Message de Mère Nature</string>
+
+    <!-- Phrases des textviews etc. -->
     <string name="link_twitter"><a href="https://twitter.com/GuillaumeVrill">Retrouve Guillaume sur Twitter!</a></string>
     <string name="welcome">Vous êtes à l\'entrée!</string>
     <string name="txtPageDecouverte">Bienvenue sur l\'application "Beacon Demo". \n\n
@@ -21,5 +28,6 @@
         <item name="menu_accueil">Accueil</item>
         <item name="menu_page_decouverte">Découverte</item>
         <item name="menu_page_information">Informations</item>
+        <item name="menu_rediffusion">Rediffusions</item>
     </string-array>
 </resources>

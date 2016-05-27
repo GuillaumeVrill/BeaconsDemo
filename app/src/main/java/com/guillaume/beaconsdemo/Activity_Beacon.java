@@ -42,21 +42,21 @@ public class Activity_Beacon extends FragmentActivity {
 
             switch(fragNum){
                 case 0:
-                    txtActivityBeacons.setText("Message de Mère Nature");
+                    txtActivityBeacons.setText(R.string.title_beacon_MintCocktail);
                     container.setBackgroundColor(getResources().getColor(R.color.colorB1));
                     fragment_mere_nature frag_mere_nature = new fragment_mere_nature();
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag_mere_nature).commit();
                     break;
 
                 case 1:
-                    txtActivityBeacons.setText("Bienvenue au Jardin");
+                    txtActivityBeacons.setText(R.string.title_beacon_IcyMarshmallow);
                     container.setBackgroundColor(getResources().getColor(R.color.colorB2));
                     fragment_entree frag_ent = new fragment_entree();
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag_ent).commit();
                     break;
 
                 case 2:
-                    txtActivityBeacons.setText("Votre passage est enregistré!");
+                    txtActivityBeacons.setText(R.string.title_beacon_BlueberryPi);
                     container.setBackgroundColor(getResources().getColor(R.color.colorB3));
                     fragment_pointage frag_point = new fragment_pointage();
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag_point).commit();

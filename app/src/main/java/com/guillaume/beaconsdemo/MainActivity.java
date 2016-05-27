@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
@@ -233,11 +234,17 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    /** Swaps fragments in the main content view */
+    /** Change le fragment de la vue principale */
     private void selectItem(int position) {
-        // Highlight the selected item, update the title, and close the drawer
-        pager.setCurrentItem(position, true);
-        mDrawerLayout.closeDrawer(mLeftMenu);
+        if(position == 3) {
+            Intent intent = new Intent(getApplicationContext(), Activity_Review_Beacon.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getApplicationContext().startActivity(intent);
+        }
+        else{
+            pager.setCurrentItem(position, true);
+            mDrawerLayout.closeDrawer(mLeftMenu);
+        }
     }
 
     @Override
