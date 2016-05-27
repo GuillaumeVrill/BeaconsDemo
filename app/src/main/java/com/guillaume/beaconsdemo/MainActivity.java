@@ -18,7 +18,6 @@ import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.estimote.sdk.SystemRequirementsChecker;
-import com.guillaume.beaconsdemo.R;
 
 import java.util.List;
 import java.util.UUID;
@@ -71,98 +70,105 @@ public class MainActivity extends FragmentActivity {
 
         // add this below:
         beaconManager.setRangingListener(new BeaconManager.RangingListener() {
+
             @Override
             public void onBeaconsDiscovered(Region region, List<Beacon> list) {
-
                 if (!list.isEmpty()) {
-                    Beacon nearestBeacon = list.get(0);
-                    String beaconDetected = nearestBeacon.getMajor()+":"+nearestBeacon.getMinor();
-                    int fragNum = -1;
+                    //for(int i=0; i<list.size(); i++) {
+                        //Beacon nearestBeacon = list.get(i);
+                        Beacon nearestBeacon = list.get(0);
+                        String beaconDetected = nearestBeacon.getMajor() + ":" + nearestBeacon.getMinor();
+                        int fragNum = -1;
 
-                    double PowerByRssi = (double)nearestBeacon.getMeasuredPower()/(double)nearestBeacon.getRssi();
-                    if(Double.toString(PowerByRssi).length() > 5){
-                        PowerByRssi = Double.parseDouble(Double.toString(PowerByRssi).substring(0,5));
-                    }
+                        double PowerByRssi = (double) nearestBeacon.getMeasuredPower() / (double) nearestBeacon.getRssi();
+                        if (Double.toString(PowerByRssi).length() > 5) {
+                            PowerByRssi = Double.parseDouble(Double.toString(PowerByRssi).substring(0, 5));
+                        }
 
-                    //Choix du fragment:
-                    switch(beaconDetected){
-                        //Mint Cocktail - Moyen
-                        case "1857:60524":
-                            //Toast.makeText(getApplicationContext(), "Vert: Rssi/Power = "+PowerByRssi+ " mètres", Toast.LENGTH_SHORT).show();
-                            if (PowerByRssi >= 1.0) {
-                                //fragNum = 0;
-                                if(mintCoktail != null){
-                                    if(mintCoktail.isAvailable()){ fragNum = 0; }
-                                    else{
-                                        fragNum = -1;
-                                        mintCoktail.setTime(mintCoktail.getTime() - 1);
-                                        Log.v("TIMELEFTMINT", "Time left mint:" + mintCoktail.getTime());
+                        //Choix du fragment:
+                        switch (beaconDetected) {
+                            //Mint Cocktail - Moyen
+                            case "1857:60524":
+                                //Toast.makeText(getApplicationContext(), "Vert: Rssi/Power = "+PowerByRssi+ " mètres", Toast.LENGTH_SHORT).show();
+                                if (PowerByRssi >= 1.0) {
+                                    //fragNum = 0;
+                                    if (mintCoktail != null) {
+                                        if (mintCoktail.isAvailable()) {
+                                            fragNum = 0;
+                                        } else {
+                                            fragNum = -1;
+                                            mintCoktail.setTime(mintCoktail.getTime() - 1);
+                                            Log.v("TIMELEFTMINT", "Time left mint:" + mintCoktail.getTime());
+                                        }
+                                    } else {
+                                        fragNum = 0;
+                                        mintCoktail = new BeaconTimer(nearestBeacon, RELOAD_TIME);
                                     }
+                                } else {
+                                    fragNum = -1;
                                 }
-                                else{
-                                    fragNum = 0;
-                                    mintCoktail = new BeaconTimer(nearestBeacon, RELOAD_TIME);
-                                }
-                            } else {
-                                fragNum = -1;
-                            }
-                            break;
-                        //Icy Marshmallow - Tres loin
-                        case "5526:19125":
-                            //Toast.makeText(getApplicationContext(), "Bleu: Rssi/Power = "+PowerByRssi+ " mètres", Toast.LENGTH_SHORT).show();
-                            if(PowerByRssi < 1.0 && PowerByRssi >= 0.5) {
-                                //fragNum = 1;
-                                if(icyMarshmallow != null){
-                                    if(icyMarshmallow.isAvailable()){ fragNum = 1; }
-                                    else{
-                                        fragNum = -1;
-                                        icyMarshmallow.setTime(icyMarshmallow.getTime() - 1);
-                                        Log.v("TIMELEFTICY", "Time left icy:" + icyMarshmallow.getTime());
+                                break;
+                            //Icy Marshmallow - Tres loin
+                            case "5526:19125":
+                                //Toast.makeText(getApplicationContext(), "Bleu: Rssi/Power = "+PowerByRssi+ " mètres", Toast.LENGTH_SHORT).show();
+                                if (PowerByRssi < 1.0 && PowerByRssi >= 0.5) {
+                                    //fragNum = 1;
+                                    if (icyMarshmallow != null) {
+                                        if (icyMarshmallow.isAvailable()) {
+                                            fragNum = 1;
+                                        } else {
+                                            fragNum = -1;
+                                            icyMarshmallow.setTime(icyMarshmallow.getTime() - 1);
+                                            Log.v("TIMELEFTICY", "Time left icy:" + icyMarshmallow.getTime());
+                                        }
+                                    } else {
+                                        fragNum = 1;
+                                        icyMarshmallow = new BeaconTimer(nearestBeacon, RELOAD_TIME);
                                     }
+                                } else {
+                                    fragNum = -1;
                                 }
-                                else{
-                                    fragNum = 1;
-                                    icyMarshmallow = new BeaconTimer(nearestBeacon, RELOAD_TIME);
-                                }
-                            }else{
-                                fragNum = -1;
-                            }
-                            break;
-                        //Blueberry Pie - Tres proche
-                        case "17828:47111":
-                            //Toast.makeText(getApplicationContext(), "Violet: Rssi/Power = "+PowerByRssi+ " mètres", Toast.LENGTH_SHORT).show();
-                            if(PowerByRssi >= 1.42) { //Entre 1.42 et 1.45 minimum
-                                //fragNum = 2;
-                                if(blueberryPie != null){
-                                    if(blueberryPie.isAvailable()){ fragNum = 2; }
-                                    else{
-                                        fragNum = -1;
-                                        blueberryPie.setTime(blueberryPie.getTime() - 1);
-                                        Log.v("TIMELEFTBLUEBERRY", "Time left blueberry:"+blueberryPie.getTime());
+                                break;
+                            //Blueberry Pie - Tres proche
+                            case "17828:47111":
+                                //Toast.makeText(getApplicationContext(), "Violet: Rssi/Power = "+PowerByRssi+ " mètres", Toast.LENGTH_SHORT).show();
+                                if (PowerByRssi >= 1.42) { //Entre 1.42 et 1.45 minimum
+                                    //fragNum = 2;
+                                    if (blueberryPie != null) {
+                                        if (blueberryPie.isAvailable()) {
+                                            fragNum = 2;
+                                        } else {
+                                            fragNum = -1;
+                                            blueberryPie.setTime(blueberryPie.getTime() - 1);
+                                            Log.v("TIMELEFTBLUEBERRY", "Time left blueberry:" + blueberryPie.getTime());
+                                        }
+                                    } else {
+                                        fragNum = 2;
+                                        blueberryPie = new BeaconTimer(nearestBeacon, RELOAD_TIME);
                                     }
+                                } else {
+                                    fragNum = -1;
                                 }
-                                else{
-                                    fragNum = 2;
-                                    blueberryPie = new BeaconTimer(nearestBeacon, RELOAD_TIME);
-                                }
-                            }else{
+                                break;
+                            default:
                                 fragNum = -1;
-                            }
-                            break;
-                        default:
-                            fragNum = -1;
-                            break;
-                    }
+                                break;
+                        }
 
-                    // TODO: update the UI here
-                    //préparation de données dans un bundle, puis lancement d'une nouvelle Activity qui prendra en paramètres le beacon détecté, afin de créer ensuite un contenu personnalisé:
-                    if(fragNum >= 0) {
-                        Intent intent = new Intent(getApplicationContext(), Activity_Beacon.class);
-                        intent.putExtra("fragNum", fragNum);
-                        intent.putExtra("powerByRssi", PowerByRssi);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        getApplicationContext().startActivity(intent);
-                    }
+                        // TODO: update the UI here
+                        //préparation de données dans un bundle, puis lancement d'une nouvelle Activity qui prendra en paramètres le beacon détecté, afin de créer ensuite un contenu personnalisé:
+                        if (fragNum >= 0) {
+                            Intent intent = new Intent(getApplicationContext(), Activity_Beacon.class);
+                            intent.putExtra("fragNum", fragNum);
+                            intent.putExtra("powerByRssi", PowerByRssi);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            getApplicationContext().startActivity(intent);
+                            //break;    //sortie de boucle
+                        }
+                        /*else{
+                            continue;
+                        }
+                    }*/
                 }
             }
         });
