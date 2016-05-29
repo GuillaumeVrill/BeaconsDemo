@@ -10,10 +10,10 @@ import android.widget.TextView;
 
 import com.guillaume.beaconsdemo.R;
 
-public class fragment_entree extends Fragment {
+public class fragment_icy_marshmallow extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View mainView = inflater.inflate(R.layout.fragment_entree, container, false);
+        final View mainView = inflater.inflate(R.layout.fragment_icy_marshmallow, container, false);
         return mainView;
     }
     @Override

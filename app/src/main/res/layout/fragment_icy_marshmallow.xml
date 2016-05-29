@@ -13,21 +13,21 @@
         android:layout_marginBottom="@dimen/activity_vertical_margin" />
 
     <ImageView
-        android:id="@+id/pic_entree"
+        android:id="@+id/pic_icy"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitStart"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:src="@drawable/entree"
+        android:src="@drawable/icymarshmallow"
         android:adjustViewBounds="true" />
 
     <TextView
-        android:id="@+id/txt_entree"
+        android:id="@+id/txt_icy"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_vertical_margin"
         android:textAppearance="@style/textStyle"
         android:gravity="center"
-        android:text="@string/frag_entree" />
+        android:text="@string/txt_icy" />
 
 </LinearLayout>

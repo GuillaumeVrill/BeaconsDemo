@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 import java.util.Vector;
@@ -30,9 +29,9 @@ public class Activity_Review_Beacon extends FragmentActivity {
         List fragments = new Vector();
 
         // Ajout des Fragments dans la liste
-        fragments.add(android.support.v4.app.Fragment.instantiate(this, fragment_entree.class.getName()));
-        fragments.add(android.support.v4.app.Fragment.instantiate(this, fragment_mere_nature.class.getName()));
-        fragments.add(android.support.v4.app.Fragment.instantiate(this, fragment_pointage.class.getName()));
+        fragments.add(android.support.v4.app.Fragment.instantiate(this, fragment_icy_marshmallow.class.getName()));
+        fragments.add(android.support.v4.app.Fragment.instantiate(this, fragment_mint_cocktail.class.getName()));
+        fragments.add(android.support.v4.app.Fragment.instantiate(this, fragment_blueberry_pie.class.getName()));
         // Création de l'adapter qui s'occupera de l'affichage de la liste de
         // Fragments
         this.mPagerAdapter = new MyPagerAdapter(super.getSupportFragmentManager(), fragments);

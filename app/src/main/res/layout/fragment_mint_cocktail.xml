@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:clickable="false">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
@@ -10,31 +11,30 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/pic_pointage"
+            android:id="@+id/pic_mint_cocktail"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitStart"
-            android:src="@drawable/pointage2"
+            android:src="@drawable/mintcocktail"
             android:adjustViewBounds="true" />
 
         <TextView
-            android:id="@+id/txt_pointage"
+            android:id="@+id/txt_mint_cocktail"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_vertical_margin"
-            android:textAppearance="@style/textStyleAccueil"
-            android:gravity="center"
-            android:text="@string/txt_pointage" />
+            android:textAppearance="@style/textStyleMintCocktail"
+            android:gravity="center" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/txt_pointage2"
+        android:id="@+id/txt_mint_cocktail2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_vertical_margin"
-        android:textAppearance="@style/textStyle"
-        android:gravity="center"
-        android:text="@string/txt_pointage2" />
+        android:text="@string/link_twitter"
+        android:textAppearance="@style/specialTxtMintCocktail"
+        android:gravity="center" />
 
 </LinearLayout>

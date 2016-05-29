@@ -19,9 +19,9 @@
                 Bonne visite!</string>
     <string name="txtPageDescription">Cette application utilise la technologie des Beacons, des emetteurs bluetooth, de la marque Estimote.\n\n
                 Elle est réalisée par Guillaume Vrilliaux, étudiant de master 1, et a pour objectif de présenter les possibilités offertes par cette technologie.</string>
-    <string name="frag_entree">Pour toute question, n\'hésitez pas à me solliciter!</string>
-    <string name="txt_pointage">Vous avez accepté de vous identifier sur notre réseau!</string>
-    <string name="txt_pointage2">Merci de votre considération!</string>
+    <string name="txt_icy">Pour toute question, n\'hésitez pas à me solliciter!</string>
+    <string name="txt_blueberry">Vous avez accepté de vous identifier sur notre réseau!</string>
+    <string name="txt_blueberry2">Merci de votre considération!</string>
 
     <!-- Menu items: -->
     <string-array name="menu_items">

@@ -8,8 +8,6 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.guillaume.beaconsdemo.R;
-
 public class Activity_Beacon extends FragmentActivity {
 
     private TextView txtActivityBeacons;
@@ -44,22 +42,22 @@ public class Activity_Beacon extends FragmentActivity {
                 case 0:
                     txtActivityBeacons.setText(R.string.title_beacon_MintCocktail);
                     container.setBackgroundColor(getResources().getColor(R.color.colorB1));
-                    fragment_mere_nature frag_mere_nature = new fragment_mere_nature();
-                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag_mere_nature).commit();
+                    fragment_mint_cocktail frag_mint = new fragment_mint_cocktail();
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag_mint).commit();
                     break;
 
                 case 1:
                     txtActivityBeacons.setText(R.string.title_beacon_IcyMarshmallow);
                     container.setBackgroundColor(getResources().getColor(R.color.colorB2));
-                    fragment_entree frag_ent = new fragment_entree();
-                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag_ent).commit();
+                    fragment_icy_marshmallow frag_icy = new fragment_icy_marshmallow();
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag_icy).commit();
                     break;
 
                 case 2:
                     txtActivityBeacons.setText(R.string.title_beacon_BlueberryPi);
                     container.setBackgroundColor(getResources().getColor(R.color.colorB3));
-                    fragment_pointage frag_point = new fragment_pointage();
-                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag_point).commit();
+                    fragment_blueberry_pie frag_blueberry = new fragment_blueberry_pie();
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag_blueberry).commit();
                     break;
 
                 default:

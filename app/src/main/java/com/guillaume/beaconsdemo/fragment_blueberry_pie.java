@@ -6,15 +6,11 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.telephony.gsm.SmsManager;
 
-import com.guillaume.beaconsdemo.R;
-
-public class fragment_pointage extends Fragment {
+public class fragment_blueberry_pie extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View mainView = inflater.inflate(R.layout.fragment_pointage, container, false);
+        final View mainView = inflater.inflate(R.layout.fragment_blueberry_pie, container, false);
 
         //Envoie de SMS de confirmation de présence: (désactivé pour éviter une nuisance chez l'utilisateur):
         //SmsManager.getDefault().sendTextMessage("0668103109", null, "Vous avez correctement pointé.", null, null);

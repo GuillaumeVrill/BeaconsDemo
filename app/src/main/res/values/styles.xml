@@ -23,12 +23,12 @@
         <item name="android:textSize">@dimen/textSizeSmall</item>
     </style>
 
-    <style name="textStyleMereNature">
+    <style name="textStyleMintCocktail">
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textSize">@dimen/textSize</item>
     </style>
 
-    <style name="specialTxtMereNature">
+    <style name="specialTxtMintCocktail">
         <item name="android:textColor">@color/special</item>
         <item name="android:textSize">@dimen/specialSize</item>
     </style>

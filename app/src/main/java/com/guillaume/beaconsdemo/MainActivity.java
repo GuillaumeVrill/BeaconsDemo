@@ -62,7 +62,7 @@ public class MainActivity extends FragmentActivity {
         // Set the list's click listener
         mLeftMenu.setOnItemClickListener(new DrawerItemClickListener());
 
-        //Gestion des beacons:
+        //Gestion des balises:
         beaconManager = new BeaconManager(this);
         region = new Region("ranged region",
                 UUID.fromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D"), null, null);

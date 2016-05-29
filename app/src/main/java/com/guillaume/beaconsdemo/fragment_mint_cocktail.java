@@ -9,20 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.guillaume.beaconsdemo.R;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class fragment_mere_nature extends Fragment {
+public class fragment_mint_cocktail extends Fragment {
 
-    private TextView txtMereNature;
-    private TextView txtMereNature2;
+    private TextView txtMintCocktail;
+    private TextView txtMintCocktail2;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View mainView = inflater.inflate(R.layout.fragment_mere_nature, container, false);
+        final View mainView = inflater.inflate(R.layout.fragment_mint_cocktail, container, false);
 
-        txtMereNature = (TextView)mainView.findViewById(R.id.txt_mere_nature);
+        txtMintCocktail = (TextView)mainView.findViewById(R.id.txt_mint_cocktail);
         Date d = new Date();
         SimpleDateFormat f = new SimpleDateFormat("HH'h' mm");
         SimpleDateFormat fcompareHour = new SimpleDateFormat("HH");
@@ -54,11 +52,11 @@ public class fragment_mere_nature extends Fragment {
             MereNatureMessage += "Vous partez? Et bien bonne soirée! \r\n";
         }
 
-        txtMereNature.setText(MereNatureMessage);
+        txtMintCocktail.setText(MereNatureMessage);
 
-        txtMereNature2 = (TextView)mainView.findViewById(R.id.txt_mere_nature2);
-        if(txtMereNature2 != null) {
-            txtMereNature2.setMovementMethod(LinkMovementMethod.getInstance());
+        txtMintCocktail2 = (TextView)mainView.findViewById(R.id.txt_mint_cocktail2);
+        if(txtMintCocktail2 != null) {
+            txtMintCocktail2.setMovementMethod(LinkMovementMethod.getInstance());
         }
 
         //Envoie d'un mail de confirmation si accès à internet:

@@ -3,7 +3,7 @@
     package="com.guillaume.beaconsdemo" >
 
     <!-- la permission sur les sms est désactivée pour le confort utilisateur, mais doit être réactivé si la confirmation du fragment
-        de pointage est activée également (voir le code java du fragment_pointage) -->
+        de pointage est activée également (voir le code java du fragment_blueberry_pie) -->
     <!--<uses-permission android:name="android.permission.SEND_SMS"></uses-permission>-->
 
     <application
